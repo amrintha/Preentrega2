@@ -1,0 +1,357 @@
+/*Reseteo*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*CSS NUEVO*/
+
+/*Quitar todos los margenes y espacios iniciales*/
+body, html{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+/*Fijar color genérico para header y footer*/
+  :root{
+    --custom-color:#cfd9da;
+  } 
+
+/*Estido del header*/
+  .header-section{
+    background-color: var(--custom-color) !important;
+    width: 100vw;
+  }
+
+/*Estilo del nombre del Diseñador*/
+  .title{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    flex-grow: 1;                     /*Toma es espacio que queda*/
+    color:black;                   
+  }
+
+/*Estilo logos social media*/
+  .social-icons{
+    display: flex;
+    gap: 15px;
+    position: absolute;               /*Fuera del flujo normal*/
+    right: 20px;                      /*Se ponen a la derecha*/
+    top: 20px;
+  }
+
+
+  .navbar {
+    position: relative;
+    margin-top: 0;
+    padding-top: 0;
+    width: 100vw;
+    background-color: var(--custom-color) !important;
+  }
+
+  .navbar .container{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .navbar-nav{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+
+   .img-container{
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin:0;
+    padding: 0;
+  }
+
+  .img-ancha{
+    width: 100vw;
+    top:0;
+    left:0;
+    margin: 0;
+    padding: 0;     
+  }
+
+  .texto-centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+  }
+
+  #portfolio{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+  }
+
+  .portfolio-container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(1fr,  1fr));
+    max-width: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 10px;
+    grid-template-areas: 
+    "item1 item2 item3 item4"
+    "item5 item6 item7 item8";
+  }
+
+  .portfolio-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portfolio-item img{
+    max-width: 100%;
+    height: 1fr;
+  }
+
+  .portfolio-item:nth-child(1){
+    grid-area: item1;
+  }
+
+  .portfolio-item:nth-child(2){
+    grid-area: item2;
+  }
+
+  .portfolio-item:nth-child(3){
+    grid-area: item3;
+  }
+
+  .portfolio-item:nth-child(4){
+    grid-area: item4;
+  }
+
+  .portfolio-item:nth-child(5){
+    grid-area: item5;
+  }
+
+  .portfolio-item:nth-child(6){
+    grid-area: item6;
+  }
+
+  .footer-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--custom-color);
+    height: 3rem;
+    width: 100%;
+  }
+
+  .firma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .firma img{
+    max-width: 100%;
+    max-height: 100%;
+    padding:5px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .copyright{
+    background-color: var(--custom-color);
+  }
+
+  .custom-small-text{
+    font-size: 0.4rem;
+  }
+
+  .texto-centrado h2{
+    color:black;
+    font-size: 100px;
+}
+
+.form-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100vw;
+    padding: 2rem;
+}
+
+.contact-info{
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.contact-info p{
+    font-size: 1.1rem;
+}
+
+.contact-form{
+    flex: 1;
+    margin: 0 auto;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/*Estilo para labels*/
+label{
+    width: 150px;
+    margin-right: 10px;
+
+}
+ /*Estilo para inputs*/
+ input[type="text"],
+ input[type="email"],
+ textarea{
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+ }
+
+ /*Media Query pantallas medianas*/
+  @media (max-width:1024px) {
+    .portfolio-container{
+      grid-template-columns: repeat(2,fr);
+      grid-template-areas: 
+      "item1 item2"
+      "item3 item4"
+      "item5 item6"
+      "item7 item8";
+    }
+
+        .form-group{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        width: 100%;
+    }
+
+    .texto-centrado{
+        font-size: 2.5rem;
+    }
+  }
+
+  /*Media Query pantallas pequeñas*/
+  @media (max-width:768px) {
+    .portfolio-container{
+      grid-template-columns: repeat(1, minmax(1fr,  1fr));
+      grid-template-areas: 
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5"
+      "item6"
+      "item7";
+    }
+
+    .texto-centrado{
+        font-size: 2rem;
+    }
+  }
+
+
+/*FIN CSS NUEVO*/
+
+
+
+/*Pone el color detrás del título y la lista del menu*/
+.fondo-color {
+    background-color:rgb(192, 192, 192);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+/*Ubica los iconos superiores*/
+.iconos-superior{
+    position: absolute; /*permite que los iconos se muevan con la pantalla, no son fijos*/
+    top: 15px;
+    right: 20px;
+    z-index: 1000; /*superpone los íconos a todos los elementos que tenga la página*/
+}
+
+.iconos-superior a{
+    margin-left: 10px; /*da espacio entre íconos*/
+}
+
+/*Contenedor de la imagen y el texto superpuestos*/
+.texto-superpuesto{
+    position: relative; /*Contenedor punto de referencia para el texto*/
+    display: inline-block; /*El contenedor se ajusta al tamaño de la imagen*/
+    width: 100%;
+}
+
+/*Estilo de la imagen superpuesta*/
+.texto-superpuesto img{
+    width: 100%; /*La imagen ocupa todo el ancho de la página*/
+    height: 400px;
+    object-fit: cover;
+}
+
+/*Estilo texto superpuesto*/
+.texto{
+    position: absolute; /*Posiciona encima de la imagen*/
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.titulo-intermedio{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: whitesmoke;
+    font-size: 150px;
+    font-weight: bold;
+}
