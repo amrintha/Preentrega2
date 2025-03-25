@@ -1,0 +1,291 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+:root {
+  --custom-color: #cfd9da;
+}
+
+.header-section {
+  background-color: var(--custom-color) !important;
+  width: 100vw;
+}
+.header-section div.title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  flex-grow: 1;
+  /*Toma es espacio que queda*/
+  color: black;
+}
+.header-section div.social-icons {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  /*Fuera del flujo normal*/
+  right: 20px;
+  /*Se ponen a la derecha*/
+  top: 20px;
+}
+.header-section nav.navbar {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  width: 100vw;
+  background-color: var(--custom-color) !important;
+}
+.header-section nav.navbar div.container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.header-section nav.navbar div.navbar-collapse ul.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.img-container {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.img-container .texto-centrado p {
+  color: black;
+  font-size: 40px;
+}
+.img-container .texto-centrado h2 {
+  color: black;
+  font-size: 100px;
+}
+.img-container img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.img-container div.texto-centrado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+section#portfolio {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+section#portfolio div.portfolio-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+  max-width: 100%;
+  width: 100%;
+  margin: 0 !important;
+  padding: 10px;
+  grid-template-areas: "item1 item2 item3 item4" "item5 item6 item7 item8";
+}
+@media (max-width: breakpoint-tablet) {
+  section#portfolio div.portfolio-container {
+    grid-template-columns: repeat(2, fr);
+    grid-template-areas: "item1 item2" "item3 item4" "item5 item6" "item7 item8";
+  }
+}
+@media (max-width: breakpoint-mobile) {
+  section#portfolio div.portfolio-container {
+    grid-template-columns: repeat(1, minmax(1fr, 1fr));
+    grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item6" "item7";
+  }
+}
+section#portfolio div.portfolio-container div.portfolio-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section#portfolio div.portfolio-container div.portfolio-item img {
+  max-width: 100%;
+  height: 1fr;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(1) {
+  grid-area: item1;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(2) {
+  grid-area: item2;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(3) {
+  grid-area: item3;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(4) {
+  grid-area: item4;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(5) {
+  grid-area: item5;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(6) {
+  grid-area: item6;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--custom-color);
+  height: 3rem;
+  width: 100%;
+}
+.footer-section div.firma {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.footer-section div.firma img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 5px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.bg-body-tertiary div.copyright.custom-small-text {
+  background-color: var(--custom-color);
+  font-size: 0.4rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100vw;
+  padding: 2rem;
+}
+.form-container div.contact-info {
+  flex: 1;
+  margin-right: 2rem;
+}
+.form-container div.contact-info p {
+  font-size: 1.1rem;
+}
+.form-container form.contact-form {
+  flex: 1;
+  margin: 0 auto;
+}
+.form-container form.contact-form div.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media (max-width: breakpoint-tablet) {
+  .form-container form.contact-form div.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+}
+.form-container form.contact-form div.form-group label {
+  width: 150px;
+  margin-right: 10px;
+}
+@media (max-width: breakpoint-tablet) {
+  .form-container form.contact-form div.form-group label {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+.form-container form.contact-form div.form-group input[type=text],
+.form-container form.contact-form div.form-group textarea {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+@media (max-width: breakpoint-tablet) {
+  .form-container form.contact-form div.form-group {
+    width: 100%;
+  }
+}
+
+.texto-superpuesto {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.texto-superpuesto img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.texto-superpuesto div.titulo-intermedio {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(27, 27, 27);
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+.about-text {
+  max-width: 600px;
+  padding-right: 20px;
+  flex: 1;
+  text-align: justify;
+  line-height: 1.6;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=estilos..css.map */
